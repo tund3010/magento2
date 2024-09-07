@@ -37,7 +37,7 @@ f_dependency_install_Composer() {
 
 f_dependency_install_Elasticsearch() {
     f_log_write Install Elasticsearch
-    curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elastic.gpg -y
+    curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elastic.gpg
     echo "deb [signed-by=/usr/share/keyrings/elastic.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
     sudo apt update -y
     sudo apt install elasticsearch -y
@@ -108,7 +108,7 @@ f_log_write Install Magento2
 sudo composer install
 
 sudo bin/magento setup:install \
---base-url=http://20.169.146.12 \
+--base-url=http://localhost \
 --db-host=localhost \
 --db-name=magento2 \
 --db-user=magento2 \
